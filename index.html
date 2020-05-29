@@ -57,6 +57,7 @@ var id1=	$("#id").val();
 
     var request = jQuery.ajax({
       crossDomain: true,
+	  headers: {  'Access-Control-Allow-Origin': '*' },
       url: url ,
       method: "GET",
       dataType: "jsonp"
@@ -85,7 +86,8 @@ var id1=	$("#id").val();
 
     var request = jQuery.ajax({
       crossDomain: true,
-      url: url ,
+	headers: {  'Access-Control-Allow-Origin': '*' },     
+	 url: url ,
       method: "GET",
       dataType: "jsonp"
     });
@@ -110,7 +112,8 @@ var id1=	$("#id").val();
 
     var request = jQuery.ajax({
       crossDomain: true,
-      url: url ,
+       headers: {  'Access-Control-Allow-Origin': '*' },
+	  url: url ,
       method: "GET",
       dataType: "jsonp"
     });

@@ -57,7 +57,7 @@ var id1=	$("#id").val();
 
     var request = jQuery.ajax({
       crossDomain: true,
-	  headers: {  'Access-Control-Allow-Origin': '*' },
+	  headers: {  "accept": "application/json","Access-Control-Allow-Origin": "*" },
       url: url ,
       method: "GET",
       dataType: "jsonp"
@@ -86,7 +86,7 @@ var id1=	$("#id").val();
 
     var request = jQuery.ajax({
       crossDomain: true,
-	headers: {  'Access-Control-Allow-Origin': '*' },     
+	headers: {  "accept": "application/json","Access-Control-Allow-Origin": "*" },     
 	 url: url ,
       method: "GET",
       dataType: "jsonp"
@@ -112,7 +112,7 @@ var id1=	$("#id").val();
 
     var request = jQuery.ajax({
       crossDomain: true,
-       headers: {  'Access-Control-Allow-Origin': '*' },
+       headers: {  "accept": "application/json","Access-Control-Allow-Origin": "*" },
 	  url: url ,
       method: "GET",
       dataType: "jsonp"
@@ -143,7 +143,13 @@ $("#re").css("visibility","hidden");
    document.getElementById("loader").style.visibility = "visible";
  var url = script_url+"?action=read";
 
-$.getJSON(url, function (json) {
+ var request = jQuery.ajax({
+      crossDomain: true,
+       headers: {  "accept": "application/json","Access-Control-Allow-Origin": "*" },
+	  url: url ,
+      method: "GET",
+      dataType: "jsonp",
+	  success: function (json) {
 
     // Set the variables from the results array
    
@@ -180,8 +186,10 @@ $.getJSON(url, function (json) {
         divContainer.appendChild(table);
 		document.getElementById("loader").style.visibility = "hidden";
 		$("#re").css("visibility","visible");
+    }
     });
-	}
+	
+}
   
   </script>
 
